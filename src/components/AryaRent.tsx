@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Car, 
-  Calendar, 
-  Phone, 
-  MapPin, 
-  CheckCircle, 
-  Star, 
-  Menu, 
-  X, 
-  ChevronRight, 
-  Shield, 
-  Clock, 
+import {
+  Car,
+  Calendar,
+  Phone,
+  MapPin,
+  CheckCircle,
+  Star,
+  Menu,
+  X,
+  ChevronRight,
+  Shield,
+  Clock,
   Users,
   MessageCircle,
   Instagram,
@@ -27,7 +27,7 @@ const carFleet = [
     transmission: "Manual/Matic",
     price12: 300000,
     price24: 450000,
-    image: "https://images.unsplash.com/photo-1590362835106-904dd05fdccc?auto=format&fit=crop&q=80&w=600",
+    image: "/images/avanza.png",
     isPopular: true,
     available: true
   },
@@ -95,25 +95,25 @@ const carFleet = [
 
 // --- FITUR KEUNGGULAN (USP) ---
 const features = [
-  { 
-    icon: <Clock size={28} />, 
-    title: "Layanan 24 Jam", 
-    desc: "Butuh mobil dadakan tengah malam? Admin kami siap respon cepat." 
+  {
+    icon: <Clock size={28} />,
+    title: "Layanan 24 Jam",
+    desc: "Butuh mobil dadakan tengah malam? Admin kami siap respon cepat."
   },
-  { 
-    icon: <Shield size={28} />, 
-    title: "Unit Terawat & Wangi", 
-    desc: "Jaminan mobil bersih, bebas asap rokok, dan service rutin." 
+  {
+    icon: <Shield size={28} />,
+    title: "Unit Terawat & Wangi",
+    desc: "Jaminan mobil bersih, bebas asap rokok, dan service rutin."
   },
-  { 
-    icon: <MapPin size={28} />, 
-    title: "Antar Jemput Menganti", 
-    desc: "Gratis antar jemput unit untuk area Menganti dan sekitarnya." 
+  {
+    icon: <MapPin size={28} />,
+    title: "Antar Jemput Menganti",
+    desc: "Gratis antar jemput unit untuk area Menganti dan sekitarnya."
   },
-  { 
-    icon: <Users size={28} />, 
-    title: "Lepas Kunci / Driver", 
-    desc: "Bebas pilih setir sendiri atau duduk manis disupiri driver handal." 
+  {
+    icon: <Users size={28} />,
+    title: "Lepas Kunci / Driver",
+    desc: "Bebas pilih setir sendiri atau duduk manis disupiri driver handal."
   },
 ];
 
@@ -150,16 +150,16 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
+            <a
+              key={link.name}
+              href={link.href}
               className={`font-medium hover:text-red-500 transition-colors ${scrolled ? 'text-slate-700' : 'text-white/90'}`}
             >
               {link.name}
             </a>
           ))}
-          <a 
-            href="#fleet" 
+          <a
+            href="#fleet"
             className="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-full font-medium transition-all shadow-lg shadow-red-600/30 flex items-center gap-2 transform hover:-translate-y-0.5"
           >
             Pesan Sekarang <ChevronRight size={16} />
@@ -174,23 +174,23 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity md:hidden ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`} onClick={() => setIsOpen(false)}></div>
-      
+
       {/* Mobile Menu Content */}
       <div className={`absolute top-full left-0 w-full bg-white shadow-xl py-6 flex flex-col items-center gap-4 md:hidden border-t transform transition-transform duration-300 ${isOpen ? 'translate-y-0' : '-translate-y-full opacity-0'}`}>
         {navLinks.map((link) => (
-          <a 
-            key={link.name} 
-            href={link.href} 
-            className="text-slate-700 font-medium w-full text-center py-3 hover:bg-red-50 hover:text-red-600" 
+          <a
+            key={link.name}
+            href={link.href}
+            className="text-slate-700 font-medium w-full text-center py-3 hover:bg-red-50 hover:text-red-600"
             onClick={() => setIsOpen(false)}
           >
             {link.name}
           </a>
         ))}
         <div className="pt-2 w-full px-6">
-            <a href="https://wa.me/6281997570478" className="w-full flex justify-center items-center gap-2 bg-red-600 text-white py-3 rounded-lg font-bold">
-                <MessageCircle size={20}/> Chat WhatsApp
-            </a>
+          <a href="https://wa.me/6281997570478" className="w-full flex justify-center items-center gap-2 bg-red-600 text-white py-3 rounded-lg font-bold">
+            <MessageCircle size={20} /> Chat WhatsApp
+          </a>
         </div>
       </div>
     </nav>
@@ -202,9 +202,9 @@ const Hero = () => {
     <section id="home" className="relative min-h-[650px] flex items-center pt-20 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&q=80&w=1920" 
-          alt="Rental Mobil Background" 
+        <img
+          src="/images/hero-bg.png"
+          alt="Rental Mobil Background"
           className="w-full h-full object-cover"
         />
         {/* Gradient Overlay: Darker on left for text readability */}
@@ -217,15 +217,15 @@ const Hero = () => {
           <div className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/50 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-medium text-red-100">
             <CheckCircle size={16} className="text-red-400" /> Solusi Transportasi Menganti & Surabaya
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
             Sewa Mobil <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">Mudah & Cepat</span> Tanpa Ribet
           </h1>
-          
+
           <p className="text-lg text-slate-300 max-w-lg leading-relaxed">
             Armada terbaru, bersih, dan wangi siap menemani perjalanan bisnis maupun liburan keluarga Anda. Melayani lepas kunci atau dengan supir.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <a href="#fleet" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-xl shadow-red-600/20 transform hover:-translate-y-1">
               Lihat Armada <ChevronRight size={20} />
@@ -235,51 +235,51 @@ const Hero = () => {
             </a>
           </div>
         </div>
-        
+
         {/* Right Search Widget (Floating) */}
         <div className="hidden lg:block">
-            <div className="bg-white p-8 rounded-3xl shadow-2xl border-t-4 border-red-600 transform translate-y-8 hover:translate-y-6 transition-transform duration-300">
-                <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                    <Calendar className="text-red-600" /> Cek Ketersediaan
-                </h3>
-                
-                <div className="space-y-5">
-                    <div>
-                        <label className="block text-sm font-semibold text-slate-500 mb-2">Lokasi Penjemputan</label>
-                        <div className="relative group">
-                            <MapPin className="absolute left-4 top-3.5 text-slate-400 group-focus-within:text-red-600 transition-colors" size={20} />
-                            <input 
-                                type="text" 
-                                placeholder="Cth: Perumahan Menganti Mas..." 
-                                className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all" 
-                            />
-                        </div>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-4">
-                        <div>
-                            <label className="block text-sm font-semibold text-slate-500 mb-2">Tanggal</label>
-                            <input 
-                                type="date" 
-                                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-500 outline-none text-slate-700 font-medium" 
-                            />
-                        </div>
-                        <div>
-                            <label className="block text-sm font-semibold text-slate-500 mb-2">Durasi</label>
-                            <select className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-500 outline-none text-slate-700 font-medium appearance-none">
-                                <option>12 Jam</option>
-                                <option>Full Day (24 Jam)</option>
-                                <option>Mingguan</option>
-                            </select>
-                        </div>
-                    </div>
+          <div className="bg-white p-8 rounded-3xl shadow-2xl border-t-4 border-red-600 transform translate-y-8 hover:translate-y-6 transition-transform duration-300">
+            <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+              <Calendar className="text-red-600" /> Cek Ketersediaan
+            </h3>
 
-                    <button className="w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center gap-2 mt-2 shadow-lg">
-                        Cari Mobil <ChevronRight size={20} />
-                    </button>
-                    <p className="text-center text-xs text-slate-400 mt-2">*Admin kami akan konfirmasi via WhatsApp</p>
+            <div className="space-y-5">
+              <div>
+                <label className="block text-sm font-semibold text-slate-500 mb-2">Lokasi Penjemputan</label>
+                <div className="relative group">
+                  <MapPin className="absolute left-4 top-3.5 text-slate-400 group-focus-within:text-red-600 transition-colors" size={20} />
+                  <input
+                    type="text"
+                    placeholder="Cth: Perumahan Menganti Mas..."
+                    className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all"
+                  />
                 </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-slate-500 mb-2">Tanggal</label>
+                  <input
+                    type="date"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-500 outline-none text-slate-700 font-medium"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-slate-500 mb-2">Durasi</label>
+                  <select className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-500 outline-none text-slate-700 font-medium appearance-none">
+                    <option>12 Jam</option>
+                    <option>Full Day (24 Jam)</option>
+                    <option>Mingguan</option>
+                  </select>
+                </div>
+              </div>
+
+              <button className="w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center gap-2 mt-2 shadow-lg">
+                Cari Mobil <ChevronRight size={20} />
+              </button>
+              <p className="text-center text-xs text-slate-400 mt-2">*Admin kami akan konfirmasi via WhatsApp</p>
             </div>
+          </div>
         </div>
       </div>
     </section>
@@ -330,17 +330,17 @@ const Fleet = () => {
             <div key={car.id} className="bg-white rounded-2xl shadow-sm hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 group overflow-hidden border border-slate-100 flex flex-col">
               {/* Image Section */}
               <div className="relative h-60 overflow-hidden bg-slate-200">
-                <img 
-                  src={car.image} 
-                  alt={car.name} 
-                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${!car.available ? 'grayscale opacity-60' : ''}`} 
+                <img
+                  src={car.image}
+                  alt={car.name}
+                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${!car.available ? 'grayscale opacity-60' : ''}`}
                 />
-                
+
                 {/* Badges */}
                 <div className="absolute top-4 left-4 flex gap-2">
-                    <span className="bg-white/90 backdrop-blur text-slate-800 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
-                        {car.type}
-                    </span>
+                  <span className="bg-white/90 backdrop-blur text-slate-800 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
+                    {car.type}
+                  </span>
                 </div>
 
                 {car.isPopular && car.available && (
@@ -355,19 +355,19 @@ const Fleet = () => {
                   </div>
                 )}
               </div>
-              
+
               {/* Content Section */}
               <div className="p-6 flex-1 flex flex-col">
                 <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-red-600 transition-colors">{car.name}</h3>
+                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-red-600 transition-colors">{car.name}</h3>
                 </div>
-                
+
                 {/* Specs */}
                 <div className="flex items-center gap-4 text-sm text-slate-500 mb-6">
                   <span className="flex items-center gap-1.5 bg-slate-50 px-2 py-1 rounded"><Users size={16} className="text-red-500" /> {car.passengers} Seat</span>
                   <span className="flex items-center gap-1.5 bg-slate-50 px-2 py-1 rounded"><Car size={16} className="text-red-500" /> {car.transmission}</span>
                 </div>
-                
+
                 {/* Pricing - Using flex-1 to push footer down */}
                 <div className="space-y-3 mt-auto mb-6">
                   <div className="flex justify-between items-center bg-red-50/50 px-4 py-2 rounded-lg border border-red-100/50">
@@ -382,18 +382,18 @@ const Fleet = () => {
 
                 {/* CTA Button */}
                 {car.available ? (
-                    <a 
+                  <a
                     href={`https://wa.me/6281997570478?text=Halo%20Arya%20Rent,%20saya%20tertarik%20sewa%20${car.name}%20untuk%20tanggal...`}
                     target="_blank"
                     rel="noreferrer"
                     className="w-full flex items-center justify-center gap-2 bg-slate-900 hover:bg-green-600 text-white py-3.5 rounded-xl font-bold transition-all duration-300 shadow-lg shadow-slate-900/10 hover:shadow-green-600/30"
-                    >
+                  >
                     <MessageCircle size={20} /> Booking via WA
-                    </a>
+                  </a>
                 ) : (
-                    <button disabled className="w-full bg-slate-200 text-slate-400 py-3.5 rounded-xl font-bold cursor-not-allowed">
-                        Tidak Tersedia
-                    </button>
+                  <button disabled className="w-full bg-slate-200 text-slate-400 py-3.5 rounded-xl font-bold cursor-not-allowed">
+                    Tidak Tersedia
+                  </button>
                 )}
               </div>
             </div>
@@ -405,22 +405,22 @@ const Fleet = () => {
 };
 
 const CTASection = () => {
-    return (
-        <section className="py-20 bg-red-600 text-white relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-            <div className="container mx-auto px-4 text-center relative z-10">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Siap Untuk Perjalanan Anda?</h2>
-                <p className="text-red-100 text-lg max-w-2xl mx-auto mb-8">
-                    Jangan biarkan rencana liburan atau bisnis Anda terganggu. Booking mobil sekarang dan dapatkan harga spesial untuk pemakaian mingguan.
-                </p>
-                <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://wa.me/6281997570478" className="bg-white text-red-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-colors shadow-xl">
-                        Hubungi Admin Sekarang
-                    </a>
-                </div>
-            </div>
-        </section>
-    )
+  return (
+    <section className="py-20 bg-red-600 text-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+      <div className="container mx-auto px-4 text-center relative z-10">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Siap Untuk Perjalanan Anda?</h2>
+        <p className="text-red-100 text-lg max-w-2xl mx-auto mb-8">
+          Jangan biarkan rencana liburan atau bisnis Anda terganggu. Booking mobil sekarang dan dapatkan harga spesial untuk pemakaian mingguan.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="https://wa.me/6281997570478" className="bg-white text-red-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-colors shadow-xl">
+            Hubungi Admin Sekarang
+          </a>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 const Footer = () => {
@@ -440,11 +440,11 @@ const Footer = () => {
               Partner perjalanan terpercaya di Menganti. Kami mengutamakan keselamatan dan kenyamanan dengan harga yang transparan.
             </p>
             <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-all"><Instagram size={20}/></a>
-                <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"><Facebook size={20}/></a>
+              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-all"><Instagram size={20} /></a>
+              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"><Facebook size={20} /></a>
             </div>
           </div>
-          
+
           {/* Quick Links */}
           <div>
             <h4 className="text-white font-bold text-lg mb-6">Navigasi</h4>
@@ -455,7 +455,7 @@ const Footer = () => {
               <li><a href="https://wa.me/6281997570478" className="hover:text-red-500 transition-colors">Hubungi Kami</a></li>
             </ul>
           </div>
-          
+
           {/* Contact Info */}
           <div>
             <h4 className="text-white font-bold text-lg mb-6">Alamat Pool</h4>
@@ -477,16 +477,16 @@ const Footer = () => {
 
           {/* Map Placeholder */}
           <div className="bg-slate-900 rounded-xl overflow-hidden h-48 relative group">
-             {/* Mock Map Image */}
-             <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity" alt="Peta Lokasi" />
-             <div className="absolute inset-0 flex items-center justify-center">
-                <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="bg-white/10 backdrop-blur border border-white/30 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-red-600 hover:border-red-600 transition-all flex items-center gap-2">
-                    <MapPin size={16}/> Buka Google Maps
-                </a>
-             </div>
+            {/* Mock Map Image */}
+            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity" alt="Peta Lokasi" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="bg-white/10 backdrop-blur border border-white/30 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-red-600 hover:border-red-600 transition-all flex items-center gap-2">
+                <MapPin size={16} /> Buka Google Maps
+              </a>
+            </div>
           </div>
         </div>
-        
+
         <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <p>&copy; 2024 Arya Rent Car Menganti. All rights reserved.</p>
           <p>Designed for speed & comfort.</p>
@@ -507,9 +507,9 @@ export default function AryaRent() {
         <CTASection />
       </main>
       <Footer />
-      
+
       {/* Floating WhatsApp Button */}
-      <a 
+      <a
         href="https://wa.me/6281997570478"
         className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl hover:shadow-green-500/40 transition-all hover:-translate-y-1 z-50 flex items-center justify-center group"
         aria-label="Chat WhatsApp"
